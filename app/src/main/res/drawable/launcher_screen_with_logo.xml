@@ -3,14 +3,14 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
             android:opacity="opaque">
     <!--Background color of Splash Screen-->
-    <item android:drawable="@color/colorWhite"
+    <item android:drawable="@color/colorPrimary"
     />
 
     <item
     >
         <bitmap
                 android:gravity="center"
-                android:src="@drawable/logo150x150" />
+                android:src="@drawable/logo_giat" />
     </item>
 
 

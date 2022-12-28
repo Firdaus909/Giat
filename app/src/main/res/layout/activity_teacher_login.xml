@@ -12,16 +12,17 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_logo" />
+        android:src="@drawable/dosen100" />
 
     <TextView
         android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:text="Teacher Login"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        android:text="Dosen Login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"/>
 
     <android.support.design.widget.TextInputLayout
 
@@ -29,13 +30,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
-            android:drawableTint="@color/colorPrimary"
-            android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/ic_email"
             android:id="@+id/teacher_Login_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email/Teacher ID"
+            android:hint="NIDN"
             android:inputType="textEmailAddress" />
     </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputLayout
@@ -47,23 +45,34 @@
         app:passwordToggleEnabled="true">
 
         <EditText
-            android:drawableTint="@color/colorPrimary"
             android:id="@+id/teacherLoginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_lock"
             android:hint="Password"
             android:inputType="textPassword" />
     </android.support.design.widget.TextInputLayout>
 
+    <TextView
+        android:id="@+id/forgetPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Forget Password?"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"
+        app:fontFamily="@font/poppins_regular" />
+
     <Button
         android:id="@+id/teacherLoginBtn"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/shape_gradient_button"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
-        android:textSize="15sp"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
         android:layout_width="match_parent"
-        android:text="L O G I N"
+        android:text="Login"
         android:layout_height="wrap_content" />
 
 <!--    <LinearLayout

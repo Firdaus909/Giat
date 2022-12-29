@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        />
+        android:gravity="center_horizontal" />
 
 
     <LinearLayout
@@ -44,10 +44,9 @@
 
                 <ImageView
                     android:padding="10dp"
-                    android:background="@drawable/ovalsahpe"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/adm" />
+                    android:src="@drawable/adm100" />
 
 
 
@@ -81,9 +80,9 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:background="@drawable/ovalsahpe"
+
                     android:padding="12dp"
-                    android:src="@drawable/teacher" />
+                    android:src="@drawable/dosen100" />
 
 
 
@@ -91,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Teacher"
+                    android:text="Dosen"
                     android:textColor="@color/colorPrimary"
                     android:textSize="17sp" />
 
@@ -120,10 +119,9 @@
 
             <ImageView
                 android:padding="10dp"
-                android:background="@drawable/ovalsahpe"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/student" />
+                android:src="@drawable/mhs100" />
 
 
 
@@ -131,7 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Student"
+                android:text="Mahasiswa"
                 android:textColor="@color/colorPrimary"
                 android:textSize="17sp" />
 

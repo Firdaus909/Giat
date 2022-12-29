@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/drawable/ic_giat_background.xml" value="0.1745" />
+        <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/drawable/ic_giat_ungu_512_background.xml" value="0.1745" />
         <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/layout/activity_add_student.xml" value="0.22447916666666667" />
         <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/layout/activity_add_teacher.xml" value="0.22447916666666667" />
         <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/layout/activity_course_list.xml" value="0.22447916666666667" />
@@ -12,6 +14,9 @@
         <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/layout/attendancepopup.xml" value="0.22447916666666667" />
         <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/layout/take_attendance_layout.xml" value="0.22447916666666667" />
         <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/layout/viewatedance.xml" value="0.22447916666666667" />
+        <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/mipmap-anydpi-v26/ic_giat_ungu.xml" value="0.1745" />
+        <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/mipmap-anydpi-v26/ic_giat_ungu_512.xml" value="0.1705" />
+        <entry key="..\:/Belajar/Android Studio/tubes/app/src/main/res/mipmap-anydpi-v26/ic_giat_ungu_round.xml" value="0.1045" />
       </map>
     </option>
   </component>

@@ -53,10 +53,10 @@ public class AdminLoginActivity extends AppCompatActivity {
         final String password=adminSingInPassET.getText().toString().trim();
 
         if(email.isEmpty()){
-            adminSignINEmailET.setError("Enter admin email");
+            adminSignINEmailET.setError("Masukkan NIP");
             adminSignINEmailET.requestFocus();
         }else if(password.isEmpty()){
-            adminSingInPassET.setError("Password is empty");
+            adminSingInPassET.setError("Masukkan Password");
             adminSingInPassET.requestFocus();
         }else {
 
@@ -65,19 +65,25 @@ public class AdminLoginActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if(dataSnapshot.exists()){
+                        boolean isLogin = false;
                         for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()) {
                             Admin admin=dataSnapshot1.getValue(Admin.class);
                             if(admin.getName().equals(email) && admin.getPassword().equals(password)){
-
-                                SweetToast.success(getApplicationContext(),"Login successfully");
-                                startActivity(new Intent(AdminLoginActivity.this,AdminActivity.class));
-                                saveUser.admin_saveData(getApplicationContext(),true);
-                                finish();
-
-                            }else {
-                                SweetToast.error(getApplicationContext(),"You entered wrong user name or password");
+                                isLogin = true;
+                                break;
                             }
                         }
+                        if(isLogin){
+                            SweetToast.success(getApplicationContext(),"Berhasil Login");
+                            startActivity(new Intent(AdminLoginActivity.this,AdminActivity.class));
+                            saveUser.admin_saveData(getApplicationContext(),true);
+                            finish();
+                        }else{
+                            SweetToast.error(getApplicationContext(),"NIP atau Password Salah");
+                        }
+                    }
+                    else{
+                        SweetToast.error(getApplicationContext(),"Data Admin Tidak Ditemukan");
                     }
                 }
 

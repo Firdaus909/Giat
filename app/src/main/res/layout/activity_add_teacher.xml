@@ -9,7 +9,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/addTeacherToolbar"
         android:background="@color/colorPrimary"
-        app:title="Add Teacher"
+        app:title="Tambah Dosen"
         app:titleTextColor="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -34,7 +34,7 @@
                 android:id="@+id/addTeacherName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Teacher Name"
+                android:hint="Nama Dosen"
                 android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
 
@@ -63,7 +63,7 @@
                 android:id="@+id/addTeacherAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Address"
+                android:hint="Alamat"
                 android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
 
@@ -78,7 +78,7 @@
                 android:id="@+id/addTeacherPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phone"
+                android:hint="No. HP"
                 android:inputType="number" />
         </android.support.design.widget.TextInputLayout>
 
@@ -110,7 +110,7 @@
                 android:id="@+id/addTeacherId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="ID"
+                android:hint="NIP"
                 android:inputType="number" />
         </android.support.design.widget.TextInputLayout>
 
@@ -120,7 +120,7 @@
             android:textSize="15sp"
             android:background="@drawable/shape_gradient_button"
             android:layout_marginTop="20dp"
-            android:text="Add Teacher"
+            android:text="Tambah Dosen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

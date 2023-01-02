@@ -125,7 +125,7 @@ public class AddStudentActivity extends AppCompatActivity {
                         course_spinner_code.add(new CheckableSpinnerAdapter.SpinnerCode<>(o,o.getC_code()));
                     }
 
-                    String headerText = "Select Courses";
+                    String headerText = "Pilih Mata Kuliah";
                     CheckableSpinnerAdapter cadapter = new CheckableSpinnerAdapter<>(AddStudentActivity.this,headerText,course_spinner_items,course_spinner_code,course_selected_items,selected_course);
                     studentCourseSp.setAdapter(cadapter);
 
@@ -218,28 +218,28 @@ public class AddStudentActivity extends AppCompatActivity {
 
       // Toast.makeText(AddStudentActivity.this,stringBuilder,Toast.LENGTH_SHORT).show();
        if(name.isEmpty()){
-           addStudentName.setError("Enter student name");
+           addStudentName.setError("Masukkan nama mahasiswa");
            addStudentName.requestFocus();
        } else if(email.isEmpty()){
-           addStudentEmail.setError("Enter student email");
+           addStudentEmail.setError("Masukkan email mahasiswa");
            addStudentEmail.requestFocus();
         }else if(phone.isEmpty()){
-           addStudentPhone.setError("Enter Phone Number");
+           addStudentPhone.setError("Masukkan No. HP");
            addStudentPhone.requestFocus();
        }
 
        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-           addStudentEmail.setError("Enter valid email");
+           addStudentEmail.setError("Masukkan email yang benar");
            addStudentEmail.requestFocus();
-       }else if(SelectedSemister.equals("Select semester")){
-           SweetToast.warning(getApplicationContext(),"Select semester");
-       }else if(SelectedYear.equals("Select year")){
-           SweetToast.warning(getApplicationContext(),"Select year");
+       }else if(SelectedSemister.equals("Pilih Semester")){
+           SweetToast.warning(getApplicationContext(),"Pilih semester");
+       }else if(SelectedYear.equals("Pilih Tahun")){
+           SweetToast.warning(getApplicationContext(),"Pilih tahun");
        }else if(ID.isEmpty()){
-           addStudentID.setError("Enter valid ID");
+           addStudentID.setError("Masukkan NIM yang benar");
            addStudentID.requestFocus();
        }else if(stringBuildert.toString().isEmpty()){
-           SweetToast.warning(getApplicationContext(),"Select courses");
+           SweetToast.warning(getApplicationContext(),"Pilih mata kuliah");
        }else {
 
            String key=studentRef.push().getKey();
@@ -250,7 +250,8 @@ public class AddStudentActivity extends AppCompatActivity {
                @Override
                public void onComplete(@NonNull Task<Void> task) {
                    if(task.isSuccessful()){
-                       SweetToast.success(getApplicationContext(),"Student Data added Successfully");
+                       SweetToast.success(getApplicationContext(),"Data mahasiswa berhasil ditambahkan");
+                       finish();
                    }
                }
            });

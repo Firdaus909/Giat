@@ -69,8 +69,8 @@ public class AddCourseActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 CourseTitleList.clear();
-                CourseTitleList.add(0,"Select course");
-                courseCodeList.add(0,"Course Code");
+                CourseTitleList.add(0,"Pilih Mata Kuliah");
+                courseCodeList.add(0,"Kode Mata Kuliah");
                 if (dataSnapshot.exists()){
 
 
@@ -111,7 +111,7 @@ public class AddCourseActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 teacherList.clear();
                 teacherIDList.clear();
-                teacherList.add(0,"Select teacher");
+                teacherList.add(0,"Pilih Dosen");
                 teacherIDList.add(0,"id");
 
                 if(dataSnapshot.exists()){
@@ -158,7 +158,7 @@ public class AddCourseActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 batchList.clear();
-                batchList.add("Select batch");
+                batchList.add("Pilih Angkatan");
 
                 if(dataSnapshot.exists()){
                     for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
@@ -203,25 +203,27 @@ public class AddCourseActivity extends AppCompatActivity {
 
         String course1=courseCodeET.getText().toString();
 
-        if(selected_course_title.equals("Select course")){
-          SweetToast.error(getApplicationContext(),"Select course");
+        if(selected_course_title.equals("Pilih Mata Kuliah")){
+          SweetToast.error(getApplicationContext(),"Pilih Mata Kuliah");
         }else if(course1.isEmpty()){
-            courseCodeET.setError("Give course code");
-        }else if(selected_batch.equals("Select batch")){
-            SweetToast.warning(getApplicationContext(),"Select batch");
-        }else if(selected_teacher.equals("Select teacher")) {
-            SweetToast.warning(getApplicationContext(), "Select teacher");
+            courseCodeET.setError("Masukkan Kode Mata Kuliah");
+        }else if(selected_batch.equals("Pilih Angkatan")){
+            SweetToast.warning(getApplicationContext(),"Pilih Angkatan");
+        }else if(selected_teacher.equals("Pilih Dosen")) {
+            SweetToast.warning(getApplicationContext(), "Pilih Dosen");
         }else if(selected_teacherID.equals("id")){
 
         }
         else {
+
             String key=courseRef.push().getKey();
             Course course=new Course("",selected_course_title,course1,selected_teacher,selected_teacherID,selected_batch);
             courseRef.child(key).setValue(course).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
-                        SweetToast.success(getApplicationContext(),"Course added successfully");
+                        SweetToast.success(getApplicationContext(),"Mata Kuliah Berhasil Ditambahkan");
+                        finish();
                     }
                 }
             });

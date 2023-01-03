@@ -1,20 +1,20 @@
 <resources>
-    <string name="app_name">Digital Attendance</string>
+    <string name="app_name">Giat</string>
 
     //custom
 
-    <string name="account_type">Select your account type</string>
+    <string name="account_type">Silahkan pilih tipe akun Anda.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment"></string>
 
 
-    <string name="nav_drawer_open">open</string>
-    <string name="nav_drawer_close">close</string>
+    <string name="nav_drawer_open">Buka</string>
+    <string name="nav_drawer_close">Tutup</string>
 
 
     <string-array name="semester">
-        <item>Select semester</item>
+        <item>Pilih Semester</item>
         <item>Spring</item>
         <item>Summer</item>
         <item>Fall</item>
@@ -22,7 +22,7 @@
     </string-array>
 
     <string-array name="department">
-        <item>Select department</item>
+        <item>Pilih Program Studi</item>
         <item>English</item>
         <item>BBA</item>
         <item>EEE</item>
@@ -34,7 +34,7 @@
     </string-array>
     <string-array name="year">
 
-        <item>Select year</item>
+        <item>Pilih Tahun</item>
         <item>2010</item>
         <item>2011</item>
         <item>2012</item>
@@ -71,28 +71,26 @@
         <item>CSE-321</item>
     </string-array>
     <string-array name="desig">
-        <item>Select Designation</item>
-        <item>Professor</item>
-        <item>Associate Professor</item>
-        <item>Lecturer</item>
+        <item>Pilih Pangkat</item>
+        <item>Profesor</item>
+        <item>Asisten Profesor</item>
+        <item>Dosen</item>
     </string-array>
 
     <string-array name="shift">
-
-
         <item>Select shift</item>
         <item>Day</item>
         <item>Evening</item>
     </string-array>
 
     //intro
-    <string name="intro_details">Manege teacher and student information\n
-        course allocation System\n
-        take live Attendance
+    <string name="intro_details">Mengelola informasi dosen dan mahasiswa\n
+        sistem alokasi mata kuliah\n
+        ambil kehadiran langsung
     </string>
-    <string name="intro_contacts">Manege Teacher and Student information</string>
-    <string name="intro_blood_donation">Course Allocation System</string>
-    <string name="intro_find_location">Take live Attendance</string>
+    <string name="intro_contacts">Mengelola Informasi Dosen dan Mahasiswa</string>
+    <string name="intro_blood_donation">Sistem Alokasi Mata Kuliah</string>
+    <string name="intro_find_location">Ambil Kehadiran Langsung</string>
 
 
 

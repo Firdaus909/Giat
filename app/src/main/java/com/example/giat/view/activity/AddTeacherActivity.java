@@ -88,24 +88,24 @@ public class AddTeacherActivity extends AppCompatActivity {
         String ID=teacherIdEt.getText().toString();
 
         if(name.isEmpty()){
-            teacherNameEt.setError("Enter teacher name");
+            teacherNameEt.setError("Masukkan nama dosen");
             teacherNameEt.requestFocus();
         }else  if(email.isEmpty()){
-            teacherEmailEt.setError("Enter Email");
+            teacherEmailEt.setError("Masukkan email");
             teacherEmailEt.requestFocus();
         }else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            teacherEmailEt.setError("Enter Email");
+            teacherEmailEt.setError("Masukkan email yang benar");
             teacherEmailEt.requestFocus();
         }else if(address.isEmpty()){
-            teacherAddressEt.setError("Enter address");
+            teacherAddressEt.setError("Masukkan alamat");
             teacherAddressEt.requestFocus();
         }else if(phone.isEmpty()){
-            teacherPhoneEt.setError("Enter phone number");
+            teacherPhoneEt.setError("Masukkan No. HP");
             teacherPhoneEt.requestFocus();
-        }else if(selectedDesig.isEmpty() && selectedDesig.equals("Select Designation")){
-            SweetToast.warning(getApplicationContext(),"Select Designation");
+        }else if(selectedDesig.isEmpty() || selectedDesig.equals("Pilih Pangkat")){
+            SweetToast.warning(getApplicationContext(),"Pilih pangkat");
         }else if(ID.isEmpty()){
-            teacherIdEt.setError("Enter ID");
+            teacherIdEt.setError("Masukkan NIP");
             teacherIdEt.requestFocus();
         }else {
 
@@ -117,7 +117,8 @@ public class AddTeacherActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()){
-                        SweetToast.success(getApplicationContext(),"Teacher data successfully");
+                        SweetToast.success(getApplicationContext(),"Data dosen berhasil ditambahkan");
+                        finish();
                     }
                 }
             });

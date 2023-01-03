@@ -10,7 +10,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/addStudentToolbar"
         android:background="@color/colorPrimary"
-        app:title="Add Student"
+        app:title="Tambah Mahasiswa"
         app:titleTextColor="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableTint="@color/colorPrimary"
-                android:hint="Student Name"
+                android:hint="Nama Mahasiswa"
                 android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
@@ -60,7 +60,7 @@
                 android:id="@+id/addStudentPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phone"
+                android:hint="No. HP"
                 android:inputType="number" />
         </android.support.design.widget.TextInputLayout>
 
@@ -96,7 +96,7 @@
                 android:id="@+id/addStudentID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="ID"
+                android:hint="NIM"
                 android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
 
@@ -114,7 +114,7 @@
         <Button
             android:id="@+id/addStudentBtn"
             android:textColor="@color/colorWhite"
-            android:text="Add student"
+            android:text="Tambah Mahasiswa"
             android:background="@drawable/shape_gradient_button"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"

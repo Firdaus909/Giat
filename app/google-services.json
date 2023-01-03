@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "1085565732834",
-    "firebase_url": "https://attendance-system-69b7f.firebaseio.com",
-    "project_id": "attendance-system-69b7f",
-    "storage_bucket": "attendance-system-69b7f.appspot.com"
+    "project_number": "989654888954",
+    "firebase_url": "https://giat-ee179-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "giat-ee179",
+    "storage_bucket": "giat-ee179.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1085565732834:android:c27388322619ef9d",
+        "mobilesdk_app_id": "1:989654888954:android:72efa3057c7d493cd7b443",
         "android_client_info": {
           "package_name": "com.example.giat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1085565732834-hvn6tsaqjsin1ra4ud3j0vomvpm97fqm.apps.googleusercontent.com",
+          "client_id": "989654888954-s4lapvf8f4p9l094ekmrvasgimrf3ts9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA4uqtZ8j9FWzyr0WM9jndA6bLa4MEI90M"
+          "current_key": "AIzaSyCUE8CrRDi7hqng1lGvU6p6pBHsy0OVUYg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1085565732834-hvn6tsaqjsin1ra4ud3j0vomvpm97fqm.apps.googleusercontent.com",
+              "client_id": "989654888954-s4lapvf8f4p9l094ekmrvasgimrf3ts9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -3,6 +3,7 @@
     package="com.example.giat">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="32" />
 
     <application
         android:allowBackup="true"
@@ -11,49 +12,49 @@
         android:roundIcon="@mipmap/ic_giat_ungu_512_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@drawable/shape_button" />
+
+        <activity android:name=".view.activity.ShowAttendanceActivity" />
+        <activity android:name=".view.activity.StudentActivity" />
+        <activity android:name=".view.activity.ViewAttendenceActivity" />
+        <activity android:name=".view.activity.SelectedCourse1Activity" />
+        <activity android:name=".view.activity.TakeAttendanceActivity" />
+        <activity android:name=".view.activity.DatePickerActivity" />
+        <activity android:name=".view.activity.AttendaceStudentActivity" />
+        <activity android:name=".view.activity.SelectedCourseActivity" />
+        <activity android:name=".view.activity.AddCourseActivity" />
+        <activity android:name=".view.activity.CourseListActivity" />
+        <activity android:name=".view.activity.CourseDeptctivity" />
+        <activity android:name=".view.activity.TeacherActivity" />
+        <activity android:name=".view.activity.DeptActivity" />
+        <activity android:name=".view.activity.SelectStudentActivity" />
+        <activity android:name=".view.activity.AddTeacherActivity" />
+        <activity android:name=".view.activity.TeacherListActivity" />
+        <activity android:name=".view.activity.AddStudentActivity" />
+        <activity android:name=".view.activity.StudentListActivity" />
+        <activity android:name=".view.activity.AdminActivity" />
+        <activity android:name=".view.activity.StudentLoginActivity" />
+        <activity android:name=".view.activity.TeacherLoginActivity" />
+        <activity android:name=".view.activity.AdminSignUpActivity" />
+        <activity android:name=".view.activity.AdminLoginActivity" />
         <activity
-            android:name=".AddMatkulActivity"
-            android:exported="false"
-            android:label="@string/title_activity_add_matkul"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity android:name=".ShowAttendanceActivity" />
-        <activity android:name=".StudentActivity" />
-        <activity android:name=".ViewAttendenceActivity" />
-        <activity android:name=".SelectedCourse1Activity" />
-        <activity android:name=".TakeAttendanceActivity" />
-        <activity android:name=".DatePickerActivity" />
-        <activity android:name=".AttendaceStudentActivity" />
-        <activity android:name=".SelectedCourseActivity" />
-        <activity android:name=".AddCourseActivity" />
-        <activity android:name=".CourseListActivity" />
-        <activity android:name=".CourseDeptctivity" />
-        <activity android:name=".TeacherActivity" />
-        <activity android:name=".DeptActivity" />
-        <activity android:name=".SelectStudentActivity" />
-        <activity android:name=".AddTeacherActivity" />
-        <activity android:name=".TeacherListActivity" />
-        <activity android:name=".AddStudentActivity" />
-        <activity android:name=".StudentListActivity" />
-        <activity android:name=".AdminActivity" />
-        <activity android:name=".StudentLoginActivity" />
-        <activity android:name=".TeacherLoginActivity" />
-        <activity android:name=".AdminSignUpActivity" />
-        <activity android:name=".AdminLoginActivity" />
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/AppTheme.Launcher">
+            android:name=".view.activity.SplashActivity"
+            android:theme="@style/AppTheme.Launcher"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IntroActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".view.activity.IntroActivity" />
+        <activity android:name=".view.activity.MainActivity" />
+
+        <activity android:name=".view.activity.AddMatkulActivity" />
+        <activity android:name=".view.activity.MatkulAdminActivity" />
     </application>
 
 </manifest>

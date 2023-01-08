@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.MatkulAdminActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:titleTextColor="@color/colorWhite"
+        app:title="Mata Kuliah"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_tambahMatkul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tambah Mata Kuliah"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="15dp"
+        android:padding="10dp"
+        android:background="@drawable/shape_button"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/addMatkul"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="115dp"
+        tools:listitem="@layout/layout_matkul"/>
+</RelativeLayout>

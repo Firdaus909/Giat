@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.ShowAttendanceActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         app:titleTextColor="@color/colorWhite"
         app:title="View Attendance"

@@ -11,13 +11,13 @@
     android:weightSum="14"
     tools:context=".view.activity.IntroActivity">
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/intro_viewpager_id"
         android:layout_width="match_parent"
         android:layout_weight="12"
         android:layout_height="0dp">
 
-    </android.support.v4.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
 
     <Button
         android:layout_gravity="center"
@@ -37,7 +37,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal">
 
-        <android.support.design.widget.TabLayout
+        <com.google.android.material.tabs.TabLayout
             android:layout_weight="2"
             android:layout_gravity="start"
             android:id="@+id/into_tab_indecator_id"
@@ -47,7 +47,7 @@
             app:tabIndicatorColor="#FFFFFF">
 
 
-        </android.support.design.widget.TabLayout>
+        </com.google.android.material.tabs.TabLayout>
 
         <TextView
             android:layout_gravity="center"

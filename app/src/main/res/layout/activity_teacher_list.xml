@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.StudentListActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/teacherListToolbar"
         android:background="@color/colorPrimary"
         app:title="Teacher List"
@@ -21,13 +21,13 @@
         android:layout_height="match_parent">
 
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
 
             android:id="@+id/teacherListRV"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addTeacherBtn"
             android:layout_margin="10dp"
             android:layout_alignParentBottom="true"

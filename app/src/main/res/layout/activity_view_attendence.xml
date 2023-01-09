@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".view.activity.ViewAttendenceActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         app:title="View Attendance"
         app:titleTextColor="@color/colorWhite"
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ViewAttendanceRV"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

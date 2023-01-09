@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".view.activity.SelectedCourse1Activity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         app:titleTextColor="@color/colorWhite"
         app:title="Course"

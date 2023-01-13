@@ -54,89 +54,114 @@ public class TeacherLoginActivity extends AppCompatActivity {
     }
 
     private void teacherLogin(){
-        final String teacherId=teacherIdEt.getText().toString();
+        final String nidn=teacherIdEt.getText().toString();
         final String tpassword=teacherPassword.getText().toString();
-        if (teacherId.isEmpty()){
-            teacherIdEt.setError("Enter teacher ID");
+        if (nidn.isEmpty()){
+            teacherIdEt.setError("Masukkan NIDN");
             teacherIdEt.requestFocus();
         }else if(tpassword.isEmpty()){
-            teacherPassword.setError("Enter Password");
+            teacherPassword.setError("Masukkan Password");
             teacherPassword.requestFocus();
         }else {
-          teacherRef= FirebaseDatabase.getInstance().getReference().child("Department");
+          teacherRef= FirebaseDatabase.getInstance().getReference().child("dosen");
           teacherRef.addListenerForSingleValueEvent(new ValueEventListener() {
               @Override
               public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                   teacherIdList.clear();
                   passwordList.clear();
 
-                  if(dataSnapshot.exists()){
-                     for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                         dept=dataSnapshot1.getKey();
-                         deptref=teacherRef.child(dept).child("Teacher");
-                         deptref.addValueEventListener(new ValueEventListener() {
-                             @Override
-                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                 if(dataSnapshot.exists()){
-                                     for(DataSnapshot dataSnapshot2:dataSnapshot.getChildren()){
-                                         for (DataSnapshot dataSnapshot3:dataSnapshot2.getChildren()){
-                                             if(dataSnapshot3.hasChildren()){
-                                                 Teacher teacher=dataSnapshot3.getValue(Teacher.class);
-                                                 if(teacher.getId().equals(teacherId)){
-                                                     String id=teacher.getId();
-                                                     String password=teacher.getPassword();
-                                                     teacherIdList.add(id);
-                                                     passwordList.add(password);
+//                  if(dataSnapshot.exists()){
+//                     for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+//                         dept=dataSnapshot1.getKey();
+//                         deptref=teacherRef.child(dept).child("dosen");
+//                         deptref.addValueEventListener(new ValueEventListener() {
+//                             @Override
+//                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                                 if(dataSnapshot.exists()){
+//                                     for(DataSnapshot dataSnapshot2:dataSnapshot.getChildren()){
+//                                         for (DataSnapshot dataSnapshot3:dataSnapshot2.getChildren()){
+//                                             if(dataSnapshot3.hasChildren()){
+//                                                 Teacher teacher=dataSnapshot3.getValue(Teacher.class);
+//                                                 if(teacher.getNidn().equals(nidn)){
+//                                                     String tnidn=teacher.getNidn();
+//                                                     String password=teacher.getPassword();
+//                                                     teacherIdList.add(tnidn);
+//                                                     passwordList.add(password);
+//
+//                                                     shift=teacher.getShift();
+//                                                     tdept=teacher.getDepartment();
+//
+//                                                     SaveUser saveUser=new SaveUser();
+//                                                     saveUser.saveTeacher(TeacherLoginActivity.this,teacher);
+//
+//                                                 }
+//
+//                                             }
+//
+//                                         }
+//
+//
+//                                     }
+//
+//                                     if(teacherIdList.contains(nidn) && passwordList.contains(tpassword)){
+//
+//
+//                                         SweetToast.success(getApplicationContext(),"Successfully login");
+//                                         Intent intent=new Intent(TeacherLoginActivity.this,TeacherActivity.class);
+//                                         intent.putExtra("TEACHERID",nidn);
+//
+//                                         SaveUser saveUser=new SaveUser();
+//                                         saveUser.teacher_IDsaveData(getApplicationContext(),nidn);
+//                                         saveUser.teacher_ShiftSaveData(getApplicationContext(),shift);
+//                                         saveUser.teacher_saveData(TeacherLoginActivity.this,true);
+//                                         saveUser.teacher_DeptSaveData(getApplicationContext(),tdept);
+//                                         startActivity(intent);
+//                                         finish();
+//
+//                                     }else {
+//                                         SweetToast.error(getApplicationContext(),"This id is not register");
+//                                     }
+//
+//                                 }
+//                             }
+//
+//                             @Override
+//                             public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                             }
+//                         });
+//
+//
+//
+//                     }
+//                  }
+                  if (dataSnapshot.exists()) {
+                      boolean isLogin = false;
+                      for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                          Teacher teacher = dataSnapshot1.getValue(Teacher.class);
+                          if (teacher.getNidn().equals(nidn) && teacher.getPassword().equals(tpassword)) {
+                              isLogin = true;
+                              break;
+                          }
+                      }
+                      if (isLogin) {
+                          SweetToast.success(getApplicationContext(), "Successfully login");
+                          Intent intent = new Intent(TeacherLoginActivity.this, TeacherActivity.class);
+                          intent.putExtra("TEACHERID", nidn);
 
-                                                     shift=teacher.getShift();
-                                                     tdept=teacher.getDepartment();
-
-                                                     SaveUser saveUser=new SaveUser();
-                                                     saveUser.saveTeacher(TeacherLoginActivity.this,teacher);
-
-                                                 }
-
-                                             }
-
-                                         }
-
-
-                                     }
-
-                                     if(teacherIdList.contains(teacherId) && passwordList.contains(tpassword)){
-
-
-                                         SweetToast.success(getApplicationContext(),"Successfully login");
-                                         Intent intent=new Intent(TeacherLoginActivity.this,TeacherActivity.class);
-                                         intent.putExtra("TEACHERID",teacherId);
-
-                                         SaveUser saveUser=new SaveUser();
-                                         saveUser.teacher_IDsaveData(getApplicationContext(),teacherId);
-                                         saveUser.teacher_ShiftSaveData(getApplicationContext(),shift);
-                                         saveUser.teacher_saveData(TeacherLoginActivity.this,true);
-                                         saveUser.teacher_DeptSaveData(getApplicationContext(),tdept);
-                                         startActivity(intent);
-                                         finish();
-
-                                     }else {
-                                         SweetToast.error(getApplicationContext(),"This id is not register");
-                                     }
-
-                                 }
-                             }
-
-                             @Override
-                             public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                             }
-                         });
-
-
-
-                     }
+                          SaveUser saveUser = new SaveUser();
+                          saveUser.teacher_IDsaveData(getApplicationContext(), nidn);
+                          saveUser.teacher_ShiftSaveData(getApplicationContext(), shift);
+                          saveUser.teacher_saveData(TeacherLoginActivity.this, true);
+                          startActivity(intent);
+                          finish();
+                      } else {
+                          SweetToast.error(getApplicationContext(), "NIDN atau Password Salah");
+                      }
+                  } else {
+                      SweetToast.error(getApplicationContext(), "Data Dosen Tidak Ditemukan");
                   }
               }
-
               @Override
               public void onCancelled(@NonNull DatabaseError databaseError) {
 

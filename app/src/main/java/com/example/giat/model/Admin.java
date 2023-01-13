@@ -17,11 +17,12 @@ public class Admin {
     private int total_contact;
     private String gender;
     private String password;
+    private String nip;
 
     public Admin() {
     }
 
-    public Admin(String name, String email, String job, String type, String address, String uId, String nid, String verified, String device_token, String profile_image, int total_count, String created_at, String updated_at, int total_contact, String gender, String password) {
+    public Admin(String name, String email, String job, String type, String address, String uId, String nid, String verified, String device_token, String profile_image, int total_count, String created_at, String updated_at, int total_contact, String gender, String password, String nip) {
         this.name = name;
         this.email = email;
         this.job = job;
@@ -38,6 +39,7 @@ public class Admin {
         this.total_contact = total_contact;
         this.gender = gender;
         this.password=password;
+        this.nip = nip;
     }
 
     public String getName() {
@@ -167,4 +169,8 @@ public class Admin {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getNip() { return nip; }
+
+    public void setNip(String nip) { this.nip = nip; }
 }

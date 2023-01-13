@@ -2,19 +2,20 @@ package com.example.giat.model;
 
 public class Student {
     private String name;
-  private   String id;
-  private   String year;
-  private   String semester;
-  private   String department;
-  private   String batch;
-  private   String section;
-  private   String email;
-  private   String phone;
-  private   String gender;
-  private   String course;
-  private   String course_code;
-  private   String shift;
-  private   String password;
+    private String id;
+    private String year;
+    private String semester;
+    private String department;
+    private String batch;
+    private String section;
+    private String email;
+    private String phone;
+    private String gender;
+    private String course;
+    private String course_code;
+    private String shift;
+    private String password;
+    private String nim;
 
 
     public String getName() {
@@ -132,7 +133,11 @@ public class Student {
         this.password = password;
     }
 
-    public Student(String name, String id, String year, String semester, String department, String batch, String section, String email, String phone, String gender, String course, String course_code, String shift, String password) {
+    public String getNim() { return nim; }
+
+    public void setNim(String nim) { this.nim = nim; }
+
+    public Student(String name, String id, String year, String semester, String department, String batch, String section, String email, String phone, String gender, String course, String course_code, String shift, String password, String nim) {
         this.name = name;
         this.id = id;
         this.year = year;
@@ -147,6 +152,7 @@ public class Student {
         this.course_code = course_code;
         this.shift=shift;
         this.password=password;
+        this.nim=nim;
 
 
     }

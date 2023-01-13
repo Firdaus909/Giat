@@ -109,10 +109,10 @@ public class AddTeacherActivity extends AppCompatActivity {
             teacherIdEt.requestFocus();
         }else {
 
-            teacherRef= FirebaseDatabase.getInstance().getReference().child("Department").child(intendedDept).child("Teacher").child(intentedShift);
+            teacherRef= FirebaseDatabase.getInstance().getReference().child("Department").child(intendedDept).child("dosen").child(intentedShift);
             String key=teacherRef.push().getKey();
 
-            Teacher teacher=new Teacher(ID,name,intendedDept,selectedDesig,"",phone,email,"","",address,"","1234",intentedShift);
+            Teacher teacher=new Teacher(ID,name,intendedDept,selectedDesig,"",phone,email,"","",address,"","1234",intentedShift,"");
             teacherRef.child(key).setValue(teacher).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {

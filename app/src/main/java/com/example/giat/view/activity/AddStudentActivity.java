@@ -88,7 +88,7 @@ public class AddStudentActivity extends AppCompatActivity {
         addStudentID=findViewById(R.id.addStudentID);
         addStudentPhone=findViewById(R.id.addStudentPhone);
 
-        studentRef= FirebaseDatabase.getInstance().getReference().child("Department").child(intentDept).child("Student").child(intentBatch).child("allstudent").child(intentShift);
+        studentRef= FirebaseDatabase.getInstance().getReference().child("mahasiswa");
         //attendanceRef=FirebaseDatabase.getInstance().getReference().child("Department").child(intentDept).child("Student").child(intentBatch).child("attendance");
 
         dept=getResources().getStringArray(R.array.department);
@@ -244,7 +244,7 @@ public class AddStudentActivity extends AppCompatActivity {
 
            String key=studentRef.push().getKey();
 
-           Student student=new Student(name,ID,SelectedYear,SelectedSemister,intentDept,intentBatch,"",email,phone,"",stringBuildert.toString(),stringBuilderc.toString(),intentShift,"1234");
+           Student student=new Student(name,ID,SelectedYear,SelectedSemister,intentDept,intentBatch,"",email,phone,"",stringBuildert.toString(),stringBuilderc.toString(),intentShift,"1234","");
 
            studentRef.child(key).setValue(student).addOnCompleteListener(new OnCompleteListener<Void>() {
                @Override

@@ -152,6 +152,7 @@ public class SaveUser {
         editor.putString("desination",teacher.getDesignation());
         editor.putString("dept",teacher.getDepartment());
         editor.putString("shift",teacher.getShift());
+        editor.putString("nidn",teacher.getNidn());
         editor.apply();
     }
 
@@ -170,7 +171,9 @@ public class SaveUser {
                 "",
                 "",
                 "",
-                sharedPreferences.getString("shift",null)
+                sharedPreferences.getString("shift",null),
+                ""
+
 
 
 
@@ -189,6 +192,7 @@ public class SaveUser {
         editor.putString("course",student.getCourse());
         editor.putString("course_code",student.getCourse_code());
         editor.putString("password",student.getPassword());
+        editor.putString("nim",student.getNim());
         editor.apply();
     }
 
@@ -207,12 +211,8 @@ public class SaveUser {
                 sharedPreferences.getString("course",null),
                 sharedPreferences.getString("course_code",null),
                 sharedPreferences.getString("shift",null),
-                sharedPreferences.getString("password",null)
-
-
-
-
-
+                sharedPreferences.getString("password",null),
+                ""
         );
         return student;
     }

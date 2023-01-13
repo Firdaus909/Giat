@@ -14,11 +14,12 @@ public class Teacher {
    private String bio;
    private String password;
    private String shift;
+   private String nidn;
 
     public Teacher() {
     }
 
-    public Teacher(String id, String name, String department, String designation, String joined_date, String phone, String email, String dob, String nid, String address, String bio, String password,String shift) {
+    public Teacher(String id, String name, String department, String designation, String joined_date, String phone, String email, String dob, String nid, String address, String bio, String password,String shift, String nidn) {
         this.id = id;
         this.name = name;
         this.department = department;
@@ -32,6 +33,7 @@ public class Teacher {
         this.bio = bio;
         this.password = password;
         this.shift=shift;
+        this.nidn=nidn;
     }
 
     public void setId(String id) {
@@ -137,4 +139,8 @@ public class Teacher {
     public void setShift(String shift) {
         this.shift = shift;
     }
+
+    public String getNidn() { return nidn; }
+
+    public void setNidn(String nidn) { this.nidn = nidn; }
 }

@@ -83,7 +83,7 @@ public class AdminSignUpActivity extends AppCompatActivity {
                       public void onComplete(@NonNull Task<AuthResult> task) {
                           if(task.isSuccessful()){
                              uId=mAuth.getCurrentUser().getUid();
-                             adminRef= FirebaseDatabase.getInstance().getReference().child("Admin").child(uId);
+                             adminRef= FirebaseDatabase.getInstance().getReference().child("admin").child(uId);
                               Admin admin=new Admin(
                                       name,
                                       email,
@@ -100,7 +100,8 @@ public class AdminSignUpActivity extends AppCompatActivity {
                                       "",
                                       0,
                                       "",
-                                      "1234"
+                                      "1234",
+                                      ""
 
 
                               );

@@ -7,9 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_giat_ungu_512"
+        android:icon="@mipmap/ic_logo_giat"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_giat_ungu_512_round"
+        android:roundIcon="@mipmap/ic_logo_giat_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 

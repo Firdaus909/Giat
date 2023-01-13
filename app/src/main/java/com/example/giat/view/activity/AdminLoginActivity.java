@@ -4,6 +4,7 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,10 +50,10 @@ public class AdminLoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        final String email=adminSignINEmailET.getText().toString().trim();
+        final String nip=adminSignINEmailET.getText().toString().trim();
         final String password=adminSingInPassET.getText().toString().trim();
 
-        if(email.isEmpty()){
+        if(nip.isEmpty()){
             adminSignINEmailET.setError("Masukkan NIP");
             adminSignINEmailET.requestFocus();
         }else if(password.isEmpty()){
@@ -60,7 +61,7 @@ public class AdminLoginActivity extends AppCompatActivity {
             adminSingInPassET.requestFocus();
         }else {
 
-            DatabaseReference adminLogRef=FirebaseDatabase.getInstance().getReference().child("Admin");
+            DatabaseReference adminLogRef=FirebaseDatabase.getInstance().getReference().child("admin");
             adminLogRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -68,7 +69,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                         boolean isLogin = false;
                         for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()) {
                             Admin admin=dataSnapshot1.getValue(Admin.class);
-                            if(admin.getName().equals(email) && admin.getPassword().equals(password)){
+                            if(admin.getNip().equals(nip) && admin.getPassword().equals(password)){
                                 isLogin = true;
                                 break;
                             }

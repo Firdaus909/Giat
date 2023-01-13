@@ -40,85 +40,112 @@ public class StudentLoginActivity extends AppCompatActivity {
                 studentLogIn();
             }
         });
-
-
     }
 
     private void studentLogIn() {
+        final String nim=studentIDET.getText().toString();
+        final String pass=studentPassET.getText().toString();
 
-        final String  id=studentIDET.getText().toString();
-        final String  pass=studentPassET.getText().toString();
-        if(id.isEmpty()){
-            studentIDET.setError("Enter Student ID");
+        if(nim.isEmpty()){
+            studentIDET.setError("Masukkan NIM");
             studentIDET.requestFocus();
         }else if(pass.isEmpty()){
-            studentPassET.setError("Enter student pass");
+            studentPassET.setError("Masukkan Password");
             studentIDET.requestFocus();
         }else {
-            studentRef= FirebaseDatabase.getInstance().getReference().child("Department");
+            studentRef= FirebaseDatabase.getInstance().getReference().child("mahasiswa");
             studentRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                    studentList.clear();
+//
+//                    if(dataSnapshot.exists()){
+//                        for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+//                            String dept=dataSnapshot1.getKey();
+//                            DatabaseReference deptRef=studentRef.child(dept).child("mahasiswa");
+//                            deptRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//                                @Override
+//                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                                    for(DataSnapshot ds1:dataSnapshot.getChildren()){
+//                                        for (DataSnapshot ds2:ds1.getChildren()){
+//                                            for (DataSnapshot ds3:ds2.getChildren()){
+//                                                for(DataSnapshot ds4:ds3.getChildren()){
+//                                                    if(ds4.hasChildren()){
+//                                                        Student student=ds4.getValue(Student.class);
+//                                                        if(student.getNim().equals(nim)){
+//                                                            new SaveUser().saveStudent(getApplicationContext(),student);
+//                                                            studentList.add(student);
+//                                                            if(studentList.get(0).getNim().equals(nim) && studentList.get(0).getPassword().equals(pass)){
+//                                                                SweetToast.success(getApplicationContext(),"Login Successfully");
+//                                                                new SaveUser().Student_saveData(getApplicationContext(),true);
+//                                                                Intent intent=new Intent(StudentLoginActivity.this,StudentActivity.class);
+//                                                                startActivity(intent);
+//                                                                finish();
+//                                                            }
+//                                                            else {
+//                                                                SweetToast.error(getApplicationContext(),"You Entered wrong Id or password");
+//                                                            }
+//
+//
+//                                                        }
+//
+//                                                    }
+//                                                }
+//
+//
+//                                            }
+//                                        }
+//                                    }
+//
+//
+//                                }
+//
+//                                @Override
+//                                public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                                }
+//                            });
+//                        }
+//                    }
+//                }
+
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                     studentList.clear();
 
                     if(dataSnapshot.exists()){
-                        for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                            String dept=dataSnapshot1.getKey();
-                            DatabaseReference deptRef=studentRef.child(dept).child("Student");
-                            deptRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
-
-                                    for(DataSnapshot ds1:dataSnapshot.getChildren()){
-                                        for (DataSnapshot ds2:ds1.getChildren()){
-                                            for (DataSnapshot ds3:ds2.getChildren()){
-                                                for(DataSnapshot ds4:ds3.getChildren()){
-                                                    if(ds4.hasChildren()){
-                                                        Student student=ds4.getValue(Student.class);
-                                                        if(student.getId().equals(id)){
-                                                            new SaveUser().saveStudent(getApplicationContext(),student);
-                                                            studentList.add(student);
-                                                            if(studentList.get(0).getId().equals(id) && studentList.get(0).getPassword().equals(pass)){
-                                                                SweetToast.success(getApplicationContext(),"Login Successfully");
-                                                                new SaveUser().Student_saveData(getApplicationContext(),true);
-                                                                Intent intent=new Intent(StudentLoginActivity.this,StudentActivity.class);
-                                                                startActivity(intent);
-                                                                finish();
-                                                            }
-                                                            else {
-                                                                SweetToast.error(getApplicationContext(),"You Entered wrong Id or password");
-                                                            }
-
-
-                                                        }
-
-                                                    }
-                                                }
-
-
-                                            }
-                                        }
-                                    }
-
-
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                }
-                            });
+                        boolean isLogin = false;
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            Student student = dataSnapshot1.getValue(Student.class);
+                            if (student.getNim().equals(nim) && student.getPassword().equals(pass)) {
+                                isLogin = true;
+                                break;
+                            }
+                        }
+                        if(isLogin){
+                            SweetToast.success(getApplicationContext(), "Login Successfully");
+                            new SaveUser().Student_saveData(getApplicationContext(), true);
+                            Intent intent = new Intent(StudentLoginActivity.this, StudentActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else{
+                            SweetToast.error(getApplicationContext(), "NIM atau Password Salah");
                         }
                     }
+                    else{
+                        SweetToast.error(getApplicationContext(), "Data Mahasiswa Tidak Ditemukan");
+                    }
                 }
-
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
             });
+
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                }
+//            });
 
         }
 

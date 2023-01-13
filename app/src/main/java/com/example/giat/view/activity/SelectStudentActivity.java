@@ -71,7 +71,7 @@ public class SelectStudentActivity extends AppCompatActivity {
                           selectedDept=parent.getItemAtPosition(position).toString();
 
                           if (selectedDept!=null ){
-                              batchRef=deptRef.child(selectedDept).child("Student");
+                              batchRef=deptRef.child(selectedDept).child("nim");
                               batchRef.addValueEventListener(new ValueEventListener() {
                                   @Override
                                   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
